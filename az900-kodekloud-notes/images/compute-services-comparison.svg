@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="740" viewBox="0 0 1600 740" role="img" aria-labelledby="title description">
+  <title id="title">Compute Services — A Comparison</title>
+  <desc id="description">Comparison of Virtual Machines, Azure Virtual Desktop, Azure App Service, Containers, and Azure Functions by primary use, scalability, management overhead, flexibility, ideal use, and pricing.</desc>
+  <defs>
+    <linearGradient id="header" x1="0" x2="1">
+      <stop offset="0" stop-color="#20add4"/>
+      <stop offset="1" stop-color="#59dfcf"/>
+    </linearGradient>
+    <linearGradient id="features" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#dda8d3"/>
+      <stop offset="1" stop-color="#e5b392"/>
+    </linearGradient>
+    <style>
+      .title { font: 42px Arial, sans-serif; fill: #242424; }
+      .head { font: bold 17px Arial, sans-serif; fill: #fff; text-anchor: middle; }
+      .head-dark { font: bold 17px Arial, sans-serif; fill: #171717; text-anchor: middle; }
+      .label { font: bold 17px Arial, sans-serif; fill: #171717; text-anchor: middle; }
+      .cell { font: 16px Arial, sans-serif; fill: #202020; }
+      .grid { stroke: #fff; stroke-width: 2; }
+    </style>
+  </defs>
+
+  <rect width="1600" height="740" fill="#fff"/>
+  <path d="M0 0 H22 Q48 25 22 50 H0 Z" fill="#54dccd"/>
+  <text class="title" x="32" y="48">Compute Services — A Comparison</text>
+
+  <!-- Header -->
+  <rect x="20" y="108" width="1560" height="54" rx="8" fill="url(#header)"/>
+  <path d="M20 154 V116 Q20 108 28 108 H200 V162 H20 Z" fill="#25b5d4"/>
+  <g class="grid" fill="none">
+    <path d="M200 108 V724 M480 108 V724 M750 108 V724 M1020 108 V724 M1290 108 V724"/>
+    <path d="M20 162 H1580 M20 252 H1580 M20 332 H1580 M20 432 H1580 M20 522 H1580 M20 612 H1580"/>
+  </g>
+
+  <!-- Body backgrounds -->
+  <rect x="20" y="162" width="180" height="562" fill="url(#features)"/>
+  <rect x="200" y="162" width="1380" height="562" fill="#f1f1f1"/>
+
+  <!-- Redraw grid above body backgrounds -->
+  <g class="grid" fill="none">
+    <path d="M200 108 V724 M480 108 V724 M750 108 V724 M1020 108 V724 M1290 108 V724"/>
+    <path d="M20 162 H1580 M20 252 H1580 M20 332 H1580 M20 432 H1580 M20 522 H1580 M20 612 H1580 M20 724 H1580"/>
+  </g>
+
+  <!-- Column headings -->
+  <text class="head-dark" x="110" y="141">Feature / Service</text>
+  <text class="head" x="340" y="141">Virtual Machines</text>
+  <text class="head" x="615" y="141">Azure Virtual Desktop</text>
+  <text class="head" x="885" y="141">Azure App Service</text>
+  <text class="head" x="1155" y="141">Containers</text>
+  <text class="head" x="1435" y="141">Azure Functions</text>
+
+  <!-- Row labels -->
+  <text class="label" x="110" y="211">Primary Use</text>
+  <text class="label" x="110" y="301">Scalability</text>
+  <text class="label" x="110" y="373"><tspan x="110">Management</tspan><tspan x="110" dy="21">Overhead</tspan></text>
+  <text class="label" x="110" y="482">Flexibility</text>
+  <text class="label" x="110" y="572">Ideal for</text>
+  <text class="label" x="110" y="672">Pricing</text>
+
+  <!-- Virtual Machines -->
+  <g class="cell">
+    <text x="212" y="194"><tspan x="212">General computing, full control</tspan><tspan x="212" dy="20">over OS and environment</tspan></text>
+    <text x="212" y="301">Manually scalable</text>
+    <text x="212" y="377"><tspan x="212">High (OS, networking,</tspan><tspan x="212" dy="20">patching, etc.)</tspan></text>
+    <text x="212" y="482">Highly customizable</text>
+    <text x="212" y="558"><tspan x="212">Complex applications,</tspan><tspan x="212" dy="20">full-stack control</tspan></text>
+    <text x="212" y="656"><tspan x="212">Based on compute resources,</tspan><tspan x="212" dy="20">storage, and networking</tspan></text>
+  </g>
+
+  <!-- Azure Virtual Desktop -->
+  <g class="cell">
+    <text x="492" y="204">Virtualized desktop experience</text>
+    <text x="492" y="301">Scalable with user demand</text>
+    <text x="492" y="367"><tspan x="492">Medium (Azure manages the</tspan><tspan x="492" dy="20">service; customer manages</tspan><tspan x="492" dy="20">desktop apps and configuration)</tspan></text>
+    <text x="492" y="472"><tspan x="492">Desktop experience from</tspan><tspan x="492" dy="20">different locations and devices</tspan></text>
+    <text x="492" y="568">Remote work and BYOD</text>
+    <text x="492" y="656"><tspan x="492">Based on usage and</tspan><tspan x="492" dy="20">compute resources</tspan></text>
+  </g>
+
+  <!-- Azure App Service -->
+  <g class="cell">
+    <text x="762" y="194"><tspan x="762">Web hosting, APIs, and</tspan><tspan x="762" dy="20">mobile back ends</tspan></text>
+    <text x="762" y="301">Autoscaling capabilities</text>
+    <text x="762" y="377"><tspan x="762">Low (platform managed</tspan><tspan x="762" dy="20">by Azure)</tspan></text>
+    <text x="762" y="482">Optimized for web apps</text>
+    <text x="762" y="568">Web applications and REST APIs</text>
+    <text x="762" y="666">Based on App Service plan</text>
+  </g>
+
+  <!-- Containers -->
+  <g class="cell">
+    <text x="1032" y="194"><tspan x="1032">Lightweight, isolated</tspan><tspan x="1032" dy="20">application environments</tspan></text>
+    <text x="1032" y="291"><tspan x="1032">Easily scalable; commonly used</tspan><tspan x="1032" dy="20">in microservices architectures</tspan></text>
+    <text x="1032" y="377"><tspan x="1032">Low OS overhead; focus</tspan><tspan x="1032" dy="20">on the application</tspan></text>
+    <text x="1032" y="472"><tspan x="1032">Portable and flexible</tspan><tspan x="1032" dy="20">application deployment</tspan></text>
+    <text x="1032" y="558"><tspan x="1032">Microservices and rapid</tspan><tspan x="1032" dy="20">development or deployment</tspan></text>
+    <text x="1032" y="656"><tspan x="1032">Depends on the selected</tspan><tspan x="1032" dy="20">Azure container service</tspan></text>
+  </g>
+
+  <!-- Azure Functions -->
+  <g class="cell">
+    <text x="1302" y="194"><tspan x="1302">Event-driven, serverless</tspan><tspan x="1302" dy="20">compute functions</tspan></text>
+    <text x="1302" y="291"><tspan x="1302">Automatically scales based</tspan><tspan x="1302" dy="20">on demand</tspan></text>
+    <text x="1302" y="367"><tspan x="1302">Minimal (serverless; no</tspan><tspan x="1302" dy="20">infrastructure management)</tspan></text>
+    <text x="1302" y="472"><tspan x="1302">Highly flexible response</tspan><tspan x="1302" dy="20">to events</tspan></text>
+    <text x="1302" y="558"><tspan x="1302">Short-lived, event-triggered</tspan><tspan x="1302" dy="20">tasks and integrations</tspan></text>
+    <text x="1302" y="656"><tspan x="1302">Consumption pricing can be</tspan><tspan x="1302" dy="20">based on executions and resources</tspan></text>
+  </g>
+</svg>
