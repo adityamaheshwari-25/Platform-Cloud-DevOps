@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1300" height="620" viewBox="0 0 1300 620" role="img" aria-labelledby="title description">
+  <title id="title">Conditional Access</title>
+  <desc id="description">Conditional Access evaluates signals such as user, location, device, application, and real-time risk for each access attempt, then allows access, requires multifactor authentication, or blocks access to applications and data.</desc>
+  <defs>
+    <linearGradient id="pink" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#dca4d4"/>
+      <stop offset="1" stop-color="#e9b29d"/>
+    </linearGradient>
+    <linearGradient id="green" x1="0" x2="1">
+      <stop offset="0" stop-color="#31b67d"/>
+      <stop offset="1" stop-color="#8cebad"/>
+    </linearGradient>
+    <linearGradient id="purple" x1="0" x2="1">
+      <stop offset="0" stop-color="#416bec"/>
+      <stop offset="1" stop-color="#8b3ce9"/>
+    </linearGradient>
+    <linearGradient id="orange" x1="0" x2="1">
+      <stop offset="0" stop-color="#e85345"/>
+      <stop offset="1" stop-color="#eda52f"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0 0 L8 3 L0 6 Z" fill="#7c7c7c"/>
+    </marker>
+  </defs>
+
+  <rect width="1300" height="620" fill="#fff"/>
+  <text x="5" y="40" fill="#292929" font-family="Arial, sans-serif" font-size="39">Conditional Access</text>
+
+  <g font-family="Arial, sans-serif">
+    <!-- Main areas -->
+    <rect x="38" y="128" width="462" height="462" rx="18" fill="#fafafa" stroke="#8b8b8b" stroke-width="2" stroke-dasharray="4 3"/>
+    <rect x="620" y="128" width="258" height="462" rx="18" fill="#fafafa" stroke="#8b8b8b" stroke-width="2" stroke-dasharray="4 3"/>
+    <rect x="997" y="128" width="258" height="462" rx="18" fill="#fafafa" stroke="#8b8b8b" stroke-width="2" stroke-dasharray="4 3"/>
+    <text x="269" y="163" fill="#777" font-size="24" text-anchor="middle">Signals</text>
+    <text x="749" y="161" fill="#777" font-size="23" text-anchor="middle">
+      <tspan x="749">Verify Each Access</tspan><tspan x="749" dy="26">Attempt</tspan>
+    </text>
+    <text x="1126" y="163" fill="#777" font-size="24" text-anchor="middle">Apps and Data</text>
+
+    <!-- Signal cards -->
+    <rect x="61" y="207" width="168" height="58" rx="10" fill="url(#pink)"/>
+    <text x="145" y="232" fill="#fff" font-size="17" text-anchor="middle"><tspan x="145">User and</tspan><tspan x="145" dy="20">Location</tspan></text>
+    <rect x="307" y="207" width="168" height="58" rx="10" fill="url(#pink)"/>
+    <text x="391" y="243" fill="#fff" font-size="18" text-anchor="middle">Devices</text>
+    <rect x="61" y="472" width="168" height="58" rx="10" fill="url(#pink)"/>
+    <text x="145" y="508" fill="#fff" font-size="18" text-anchor="middle">Application</text>
+    <rect x="307" y="472" width="168" height="58" rx="10" fill="url(#pink)"/>
+    <text x="391" y="508" fill="#fff" font-size="17" text-anchor="middle">Real-Time Risk</text>
+
+    <!-- Signal arrows and policy cloud -->
+    <g fill="none" stroke="#858585" stroke-width="2.5" marker-end="url(#arrow)">
+      <path d="M145 265 L193 305"/>
+      <path d="M391 265 L344 305"/>
+      <path d="M145 472 L191 430"/>
+      <path d="M391 472 L346 430"/>
+    </g>
+    <path d="M184 422 C158 419 146 398 154 376 C158 363 169 354 183 351 C184 322 208 301 236 305 C249 279 288 278 303 305 C333 296 360 317 361 347 C381 352 393 370 389 391 C385 410 370 422 349 422 Z" fill="#e3e3e3" stroke="#8c8c8c" stroke-width="2.5"/>
+    <circle cx="258" cy="360" r="16" fill="#f7ca53"/>
+    <path d="M270 372 L294 396 M284 386 L293 377 M291 393 L300 384" stroke="#efa928" stroke-width="8" stroke-linecap="round"/>
+
+    <!-- Decision flow -->
+    <g fill="none" stroke="#777" stroke-width="2.3" marker-end="url(#arrow)">
+      <path d="M389 365 H578 V276 H657"/>
+      <path d="M389 365 H657"/>
+      <path d="M578 365 V493 H657"/>
+      <path d="M838 276 H918 V359 H997"/>
+      <path d="M838 384 H918 V359"/>
+    </g>
+    <rect x="657" y="250" width="181" height="53" rx="9" fill="url(#green)"/>
+    <text x="748" y="283" fill="#fff" font-size="18" text-anchor="middle">✓ Allow access</text>
+    <rect x="657" y="358" width="181" height="53" rx="9" fill="url(#purple)"/>
+    <text x="748" y="391" fill="#fff" font-size="18" text-anchor="middle">🔒 Require MFA</text>
+    <rect x="657" y="466" width="181" height="53" rx="9" fill="url(#orange)"/>
+    <text x="748" y="499" fill="#fff" font-size="18" text-anchor="middle">⊘ Block access</text>
+
+    <!-- Apps and data icons/labels -->
+    <g fill="none" stroke="#8c8c8c" stroke-width="2.5">
+      <path d="M1041 338 V296 H1102 V338 M1051 338 V310 H1092 V338 M1062 310 V278 H1081 V310 M1041 338 H1102"/>
+      <rect x="1042" y="427" width="60" height="39" rx="4"/>
+      <circle cx="1060" cy="442" r="7"/>
+      <path d="M1049 461 Q1060 449 1071 461 M1080 439 H1094 M1080 448 H1094 M1080 457 H1094"/>
+      <path d="M1145 466 C1129 464 1122 453 1127 441 C1130 432 1138 427 1147 427 C1153 407 1181 405 1189 425 C1205 426 1215 436 1215 449 C1215 461 1206 467 1193 467 Z"/>
+    </g>
+    <g fill="#7d7d7d" font-size="17" text-anchor="middle">
+      <text x="1072" y="365">Applications</text>
+      <text x="1175" y="365">Data</text>
+      <text x="1072" y="492">Identities</text>
+      <text x="1175" y="492">Cloud services</text>
+    </g>
+    <g fill="#8c8c8c" font-family="monospace" font-size="17">
+      <text x="1147" y="293">0110011</text><text x="1147" y="312">1101010</text><text x="1147" y="331">0011011</text>
+    </g>
+  </g>
+</svg>
