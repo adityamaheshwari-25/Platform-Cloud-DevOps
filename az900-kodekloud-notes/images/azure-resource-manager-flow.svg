@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="790" viewBox="0 0 1500 790" role="img" aria-labelledby="title description">
+  <title id="title">Azure Resource Manager request flow</title>
+  <desc id="description">Azure portal, PowerShell, CLI, SDK, and REST clients send management requests through Azure Resource Manager. Microsoft Entra ID supports authentication, and ARM routes authorized operations to Azure resource providers.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0 0 L8 3 L0 6 Z" fill="#666"/>
+    </marker>
+    <linearGradient id="arm" x1="0" x2="1">
+      <stop offset="0" stop-color="#e9f6fc"/>
+      <stop offset="1" stop-color="#dcecf7"/>
+    </linearGradient>
+    <linearGradient id="cube" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#28b7d9"/>
+      <stop offset="1" stop-color="#62dfcf"/>
+    </linearGradient>
+    <style>
+      .box { fill: #f1f1f1; stroke: #686868; stroke-width: 3; }
+      .label { font: 26px Arial, sans-serif; fill: #626262; text-anchor: middle; }
+      .service { font: 24px Arial, sans-serif; fill: #5d5d5d; text-anchor: middle; }
+      .line { fill: none; stroke: #666; stroke-width: 3; marker-end: url(#arrow); }
+    </style>
+  </defs>
+
+  <rect width="1500" height="790" fill="#fff"/>
+  <text x="8" y="51" fill="#242424" font-family="Arial, sans-serif" font-size="48">Azure Resource Manager</text>
+
+  <!-- Management clients -->
+  <g>
+    <rect class="box" x="85" y="170" width="285" height="67" rx="11"/>
+    <text class="label" x="228" y="213">Azure Portal</text>
+    <rect class="box" x="405" y="170" width="285" height="67" rx="11"/>
+    <text class="label" x="548" y="213">Azure PowerShell</text>
+    <rect class="box" x="725" y="170" width="285" height="67" rx="11"/>
+    <text class="label" x="868" y="213">Azure CLI</text>
+    <rect class="box" x="1045" y="170" width="285" height="67" rx="11"/>
+    <text class="label" x="1188" y="213">REST Client</text>
+    <rect class="box" x="405" y="307" width="605" height="66" rx="11"/>
+    <text class="label" x="708" y="349">Azure SDKs</text>
+  </g>
+
+  <!-- Client request lines -->
+  <g class="line">
+    <path d="M228 237 V410 H681"/>
+    <path d="M548 237 V307"/>
+    <path d="M868 237 V307"/>
+    <path d="M1188 237 V410 H735"/>
+    <path d="M708 373 V429"/>
+  </g>
+  <circle cx="708" cy="410" r="12" fill="#6e6e6e"/>
+
+  <!-- ARM control plane -->
+  <rect x="85" y="455" width="1090" height="68" rx="11" fill="url(#arm)" stroke="#161616" stroke-width="3"/>
+  <g transform="translate(385 468)">
+    <path d="M0 12 L25 0 L50 12 L50 42 L25 55 L0 42 Z" fill="#87949c"/>
+    <path d="M8 16 L25 8 L42 16 L42 37 L25 46 L8 37 Z" fill="url(#cube)"/>
+    <path d="M25 8 V46 M8 16 L25 26 L42 16" fill="none" stroke="#fff" stroke-width="2" opacity=".75"/>
+  </g>
+  <text x="698" y="501" fill="#161616" font-family="Arial, sans-serif" font-size="34" font-weight="bold" text-anchor="middle">Azure Resource Manager</text>
+
+  <!-- Authentication -->
+  <rect class="box" x="1215" y="455" width="245" height="68" rx="11"/>
+  <text class="label" x="1338" y="499">Authentication</text>
+  <path d="M1175 489 H1215 M1215 489 L1202 481 M1215 489 L1202 497" fill="none" stroke="#666" stroke-width="3"/>
+  <path d="M1215 506 H1175 M1175 506 L1188 498 M1175 506 L1188 514" fill="none" stroke="#666" stroke-width="3"/>
+  <text x="1338" y="545" fill="#777" font-family="Arial, sans-serif" font-size="16" text-anchor="middle">Microsoft Entra ID</text>
+
+  <!-- Resource providers -->
+  <g class="line">
+    <path d="M210 523 V610"/>
+    <path d="M490 523 V610"/>
+    <path d="M770 523 V610"/>
+    <path d="M1050 523 V610"/>
+  </g>
+  <g>
+    <rect class="box" x="85" y="610" width="250" height="112" rx="14"/>
+    <text class="service" x="210" y="661"><tspan x="210">Data and</tspan><tspan x="210" dy="29">Storage</tspan></text>
+    <text x="210" y="706" fill="#888" font-family="monospace" font-size="15" text-anchor="middle">Microsoft.Storage</text>
+
+    <rect class="box" x="365" y="610" width="250" height="112" rx="14"/>
+    <text class="service" x="490" y="675">Web Apps</text>
+    <text x="490" y="706" fill="#888" font-family="monospace" font-size="15" text-anchor="middle">Microsoft.Web</text>
+
+    <rect class="box" x="645" y="610" width="250" height="112" rx="14"/>
+    <text class="service" x="770" y="661"><tspan x="770">Virtual</tspan><tspan x="770" dy="29">Machines</tspan></text>
+    <text x="770" y="706" fill="#888" font-family="monospace" font-size="15" text-anchor="middle">Microsoft.Compute</text>
+
+    <rect class="box" x="925" y="610" width="250" height="112" rx="14"/>
+    <text class="service" x="1050" y="661"><tspan x="1050">Network</tspan><tspan x="1050" dy="29">Services</tspan></text>
+    <text x="1050" y="706" fill="#888" font-family="monospace" font-size="15" text-anchor="middle">Microsoft.Network</text>
+
+    <circle cx="1234" cy="666" r="7" fill="#666"/><circle cx="1271" cy="666" r="7" fill="#666"/><circle cx="1308" cy="666" r="7" fill="#666"/>
+    <text x="1380" y="675" fill="#606060" font-family="Arial, sans-serif" font-size="25" text-anchor="middle">Other resource</text>
+    <text x="1380" y="704" fill="#606060" font-family="Arial, sans-serif" font-size="25" text-anchor="middle">providers</text>
+  </g>
+</svg>

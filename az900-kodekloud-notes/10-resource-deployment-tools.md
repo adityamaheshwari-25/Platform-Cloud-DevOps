@@ -22,6 +22,8 @@ Repeated manual portal deployment can create inconsistency. Scripts and declarat
 
 ARM is Azure’s deployment and management control plane.
 
+![Azure Resource Manager receiving management requests and routing them to Azure resource providers](images/azure-resource-manager-flow.svg)
+
 - Receives requests from the portal, CLI, PowerShell, SDKs, and REST APIs.
 - Authenticates and authorizes the request.
 - Sends the operation to the correct **resource provider**.
@@ -88,4 +90,3 @@ Azure Arc does not move a server into Azure; it connects the resource to Azure�
 - [KodeKloud — Resource Deployment Tools](https://notes.kodekloud.com/docs/Microsoft-Azure-Fundamentals-AZ-900/Resource-Deployment-Tools/Introduction)
 - [KodeKloud — Azure Resource Manager](https://notes.kodekloud.com/docs/Microsoft-Azure-Fundamentals-AZ-900/Resource-Deployment-Tools/Azure-Resource-Manager)
 - [KodeKloud — Infrastructure as Code](https://notes.kodekloud.com/docs/Microsoft-Azure-Fundamentals-AZ-900/Resource-Deployment-Tools/Infrastructure-as-Code)
-
