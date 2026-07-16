@@ -24,6 +24,8 @@ Advisor recommends improvements; it does not normally apply them automatically.
 
 Provides a personalized view of Azure platform events that may affect your subscriptions and resources.
 
+![Azure Service Health, Azure Resource Health, and Azure Status views](images/azure-service-health-views.svg)
+
 | View | Scope |
 |---|---|
 | Azure Status | Public, broad status of Azure services and regions |
@@ -77,4 +79,3 @@ Azure Monitor collects, analyzes, visualizes, and acts on telemetry from applica
 - [KodeKloud — Monitoring Tools](https://notes.kodekloud.com/docs/Microsoft-Azure-Fundamentals-AZ-900/Monitoring-Tools/Introduction)
 - [KodeKloud — Azure Advisor](https://notes.kodekloud.com/docs/Microsoft-Azure-Fundamentals-AZ-900/Monitoring-Tools/Azure-Advisor)
 - [KodeKloud — Azure Service Health](https://notes.kodekloud.com/docs/Microsoft-Azure-Fundamentals-AZ-900/Monitoring-Tools/Azure-Service-Health)
-
