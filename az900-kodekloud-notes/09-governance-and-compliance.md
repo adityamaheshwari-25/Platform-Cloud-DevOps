@@ -56,6 +56,8 @@ Use it when an auditor or compliance team needs Microsoft’s assurance document
 
 Microsoft Purview provides data governance, risk, and compliance capabilities across supported cloud, on-premises, and SaaS data sources.
 
+![Microsoft Purview governing data across on-premises, AWS, Google Cloud, and Azure environments](images/microsoft-purview-multicloud.svg)
+
 Capabilities include:
 
 - Discovering and cataloging data
@@ -83,4 +85,3 @@ Capabilities include:
 - [KodeKloud — Governance and Compliance](https://notes.kodekloud.com/docs/Microsoft-Azure-Fundamentals-AZ-900/Governance-and-Compliance/Introduction)
 - [KodeKloud — Azure Policies](https://notes.kodekloud.com/docs/Microsoft-Azure-Fundamentals-AZ-900/Governance-and-Compliance/Azure-Policies)
 - [KodeKloud — Microsoft Purview](https://notes.kodekloud.com/docs/Microsoft-Azure-Fundamentals-AZ-900/Governance-and-Compliance/Microsoft-Purview)
-

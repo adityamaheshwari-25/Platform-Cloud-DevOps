@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1240" height="650" viewBox="0 0 1240 650" role="img" aria-labelledby="title description">
+  <title id="title">Microsoft Purview across multicloud and on-premises data</title>
+  <desc id="description">Microsoft Purview connects data governance across an on-premises data center, Amazon Web Services, Google Cloud, and Microsoft Azure.</desc>
+  <defs>
+    <linearGradient id="purview" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#304ee9"/>
+      <stop offset="1" stop-color="#7d23eb"/>
+    </linearGradient>
+    <linearGradient id="azure" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#1977d2"/>
+      <stop offset="1" stop-color="#36a7e8"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1240" height="650" fill="#fff"/>
+  <text x="7" y="46" fill="#292929" font-family="Arial, sans-serif" font-size="41">Microsoft Purview</text>
+
+  <g font-family="Arial, sans-serif">
+    <!-- Connections -->
+    <g fill="none" stroke="#888" stroke-width="2.2" stroke-dasharray="3 3">
+      <path d="M666 232 V298"/>
+      <path d="M484 365 H587"/>
+      <path d="M745 365 H849"/>
+      <path d="M666 444 V517"/>
+    </g>
+
+    <!-- On-premises -->
+    <rect x="510" y="118" width="313" height="116" rx="20" fill="#f1f1f1" stroke="#6e6e6e" stroke-width="2.5"/>
+    <g fill="none" stroke="#707070" stroke-width="2.3">
+      <rect x="535" y="151" width="34" height="52"/>
+      <path d="M542 151 V141 H562 V151 M569 160 L582 166 V203 H569 M531 203 H586"/>
+      <path d="M542 162 H548 M556 162 H562 M542 173 H548 M556 173 H562 M542 184 H548 M556 184 H562 M542 195 H548 M556 195 H562"/>
+      <circle cx="529" cy="169" r="9"/><path d="M529 163 V175 M525 166 H532"/>
+    </g>
+    <text x="610" y="171" fill="#666" font-size="23" font-weight="bold">
+      <tspan x="610">On-Premises Data</tspan><tspan x="610" dy="29">Center</tspan>
+    </text>
+
+    <!-- AWS -->
+    <rect x="170" y="301" width="314" height="116" rx="20" fill="#f1f1f1" stroke="#6e6e6e" stroke-width="2.5"/>
+    <circle cx="229" cy="359" r="28" fill="#ddd"/>
+    <text x="229" y="361" fill="#555" font-size="17" font-weight="bold" text-anchor="middle">aws</text>
+    <path d="M210 370 Q229 380 249 368" fill="none" stroke="#eda52e" stroke-width="4" stroke-linecap="round"/>
+    <text x="271" y="348" fill="#666" font-size="23" font-weight="bold">
+      <tspan x="271">Amazon Web</tspan><tspan x="271" dy="29">Services</tspan>
+    </text>
+
+    <!-- Google Cloud -->
+    <rect x="849" y="305" width="313" height="116" rx="20" fill="#f1f1f1" stroke="#6e6e6e" stroke-width="2.5"/>
+    <g fill="none" stroke-width="10" stroke-linecap="round">
+      <path d="M891 375 Q879 359 891 345" stroke="#f3b61b"/>
+      <path d="M891 345 Q903 326 923 340" stroke="#e43e35"/>
+      <path d="M923 340 Q942 343 943 361" stroke="#3674df"/>
+      <path d="M943 361 Q942 378 926 380 H894" stroke="#2ca967"/>
+    </g>
+    <text x="949" y="372" fill="#666" font-size="23" font-weight="bold">Google Cloud</text>
+
+    <!-- Azure -->
+    <rect x="510" y="517" width="313" height="116" rx="20" fill="#f1f1f1" stroke="#6e6e6e" stroke-width="2.5"/>
+    <path d="M547 600 L571 545 H597 L579 582 H607 L618 600 Z" fill="url(#azure)"/>
+    <text x="612" y="587" fill="#666" font-size="23" font-weight="bold">Microsoft Azure</text>
+
+    <!-- Purview hub -->
+    <circle cx="666" cy="365" r="79" fill="url(#purview)"/>
+    <path d="M628 392 C612 389 604 377 609 364 C612 355 621 349 631 349 C637 329 665 326 676 344 C694 339 711 351 712 369 C725 372 732 382 729 393 C726 404 717 409 704 409 H630" fill="none" stroke="#fff" stroke-width="2.5"/>
+    <text x="666" y="452" fill="#555" font-size="18" font-weight="bold" text-anchor="middle">Data governance across environments</text>
+  </g>
+</svg>
