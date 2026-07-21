@@ -120,6 +120,30 @@ local_file.example["prod"]
 - Removing an item from the middle of a `count` list can shift indexes and cause unexpected changes.
 - A block cannot use both `count` and `for_each`.
 
+### Why `for_each` is safer when items are removed
+
+Suppose a variable contains these filenames:
+
+```hcl
+filenames = ["a.txt", "b.txt", "c.txt"]
+```
+
+With `count`, Terraform identifies the files by numeric position: `[0]`, `[1]`, and `[2]`. If `b.txt` is removed, `c.txt` shifts from index `[2]` to `[1]`. Terraform can therefore destroy or replace the removed file and resources after it because their indexes no longer match the same filenames.
+
+With `for_each = toset(var.filenames)`, each filename is its own stable key:
+
+```text
+local_file.example["a.txt"]
+local_file.example["b.txt"]
+local_file.example["c.txt"]
+```
+
+Removing `b.txt` removes only `local_file.example["b.txt"]`; the identities of `a.txt` and `c.txt` do not change. Use `for_each` when list items may be added or removed independently.
+
+The output also reflects the identity difference: `count` instances are commonly represented as an ordered list, while `for_each` instances are represented as a map using their stable keys.
+
+![Terraform output comparison showing count as an ordered list and for_each as a map with filename keys](images/count-vs-for-each-output.png)
+
 ## Version constraints
 
 Terraform CLI constraint:
@@ -167,4 +191,3 @@ Root modules should set sensible upper and lower bounds. Reusable modules should
 - [`count`](https://developer.hashicorp.com/terraform/language/meta-arguments/count)
 - [`for_each`](https://developer.hashicorp.com/terraform/language/meta-arguments/for_each)
 - [Version constraints](https://developer.hashicorp.com/terraform/language/expressions/version-constraints)
-

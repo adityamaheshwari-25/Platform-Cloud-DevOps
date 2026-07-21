@@ -31,6 +31,10 @@ terraform {
 }
 ```
 
+The following course example shows the S3 bucket, state key, AWS Region, and the older DynamoDB-based locking configuration:
+
+![S3 remote-state backend configuration showing the bucket, state key, AWS Region, and DynamoDB locking table](images/s3-remote-state-backend.png)
+
 Important:
 
 - The backend bucket normally must exist before initialization.
@@ -130,4 +134,3 @@ Only run `terraform force-unlock` after verifying that no valid Terraform operat
 - [S3 backend](https://developer.hashicorp.com/terraform/language/backend/s3)
 - [Terraform state commands](https://developer.hashicorp.com/terraform/cli/commands/state)
 - [`moved` blocks](https://developer.hashicorp.com/terraform/language/moved)
-

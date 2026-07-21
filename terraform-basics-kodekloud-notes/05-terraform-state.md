@@ -1,5 +1,11 @@
 # Module 5 — Terraform State
 
+Configuration = what you want
+
+Real infrastructure = what actually exists
+
+State = Terraform's memory connecting the two
+
 ## What state is
 
 Terraform state is Terraform’s record of the infrastructure it manages. By default, local state is stored in:
@@ -35,6 +41,14 @@ Terraform does not manage resources by configuration alone; state is a core part
 | Real infrastructure | Current objects returned by provider APIs |
 
 Differences between configuration and reality are called drift. A plan refreshes relevant information and proposes how to reach the configured desired state.
+
+## Resource vs data source
+
+| Resource | Data source |
+|---|---|
+| Keyword: `resource` | Keyword: `data` |
+| Creates, updates, and destroys infrastructure. | Only reads existing infrastructure. |
+| Also called a managed resource. | Also called a data resource. |
 
 ## State safety
 
@@ -109,4 +123,3 @@ Remote backends address these problems and are covered later.
 - [Purpose of Terraform state](https://developer.hashicorp.com/terraform/language/state/purpose)
 - [Sensitive data in state](https://developer.hashicorp.com/terraform/language/state/sensitive-data)
 - [Manage resource drift](https://developer.hashicorp.com/terraform/tutorials/state/resource-drift)
-

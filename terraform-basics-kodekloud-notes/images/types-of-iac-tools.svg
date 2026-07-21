@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="635" viewBox="0 0 1080 635" role="img" aria-labelledby="title description">
+  <title id="title">Types of Infrastructure as Code tools</title>
+  <desc id="description">Configuration management tools include Ansible, Puppet, and SaltStack. Server templating tools include Docker, Packer, and Vagrant. Provisioning tools include Terraform and AWS CloudFormation.</desc>
+  <defs>
+    <linearGradient id="terraform" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#7657dc"/>
+      <stop offset="1" stop-color="#4c34b8"/>
+    </linearGradient>
+    <linearGradient id="vagrant" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#2978f0"/>
+      <stop offset="1" stop-color="#0750d7"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1080" height="635" fill="#fff"/>
+  <g font-family="Arial, sans-serif">
+    <text x="540" y="43" fill="#555" font-size="36" font-weight="300" text-anchor="middle">Types of IaC Tools</text>
+    <g fill="#666" font-size="23" text-anchor="middle">
+      <text x="180" y="131">Configuration Management</text>
+      <text x="540" y="131">Server Templating</text>
+      <text x="900" y="131">Provisioning Tools</text>
+    </g>
+
+    <!-- Ansible -->
+    <circle cx="147" cy="211" r="48" fill="#171717"/>
+    <path d="M121 242 L147 174 L174 242 M135 211 L163 231" fill="none" stroke="#fff" stroke-width="7" stroke-linejoin="round"/>
+    <text x="147" y="286" fill="#222" font-size="18" letter-spacing="5" text-anchor="middle">ANSIBLE</text>
+
+    <!-- Puppet -->
+    <g transform="translate(76 342)" fill="none" stroke="#f5a313" stroke-width="7" stroke-linecap="round">
+      <path d="M0 0 V42 M0 7 H17 M0 35 H17 M17 7 V35"/>
+      <circle cx="0" cy="0" r="4" fill="#f5a313"/><circle cx="0" cy="42" r="4" fill="#f5a313"/><circle cx="17" cy="21" r="4" fill="#f5a313"/>
+    </g>
+    <text x="110" y="383" fill="#f5a313" font-size="34" font-weight="bold">puppet</text>
+
+    <!-- SaltStack -->
+    <g transform="translate(114 445)" fill="none" stroke="#151515" stroke-width="2.5">
+      <path d="M0 24 L31 7 L61 24 L30 42 Z M0 24 V59 L30 76 L30 42 M61 24 V59 L30 76"/>
+      <path d="M31 7 L47 0 L69 12 L61 24 M47 0 V20 M69 12 V32 L54 40"/>
+    </g>
+    <text x="180" y="548" fill="#151515" font-size="28" text-anchor="middle">SALTSTACK</text>
+
+    <!-- Docker -->
+    <g fill="#2496ed">
+      <path d="M493 216 H581 Q581 241 561 250 Q536 262 511 248 Q493 238 493 216 Z"/>
+      <rect x="505" y="195" width="13" height="13"/><rect x="521" y="195" width="13" height="13"/><rect x="537" y="195" width="13" height="13"/>
+      <rect x="521" y="179" width="13" height="13"/><rect x="537" y="179" width="13" height="13"/><rect x="537" y="163" width="13" height="13"/>
+      <path d="M579 205 Q592 201 600 210 Q590 217 580 216 Z"/>
+    </g>
+    <text x="545" y="286" fill="#2496ed" font-size="39" text-anchor="middle">docker</text>
+
+    <!-- Packer -->
+    <g transform="translate(443 348)">
+      <path d="M0 0 L21 13 V75 L0 61 Z" fill="#1f9cdb"/>
+      <path d="M25 15 L45 28 V89 L25 76 Z" fill="#5cc7ed"/>
+    </g>
+    <text x="510" y="373" fill="#222" font-size="13" font-weight="bold">HashiCorp</text>
+    <text x="510" y="414" fill="#111" font-size="43" font-weight="bold">Packer</text>
+
+    <!-- Vagrant -->
+    <path d="M490 459 L518 443 L538 480 L559 443 L587 459 L564 529 L538 547 L512 529 Z" fill="url(#vagrant)"/>
+    <path d="M518 443 L538 480 L538 520 L512 529 L490 459 Z" fill="#1768e8" opacity=".9"/>
+    <text x="540" y="576" fill="#333" font-size="13" font-weight="bold" text-anchor="middle">HashiCorp</text>
+    <text x="540" y="610" fill="#111" font-size="38" font-weight="bold" text-anchor="middle">Vagrant</text>
+
+    <!-- Terraform -->
+    <g fill="url(#terraform)">
+      <path d="M789 191 L811 203 V228 L789 216 Z"/>
+      <path d="M814 205 L836 217 V242 L814 230 Z"/>
+      <path d="M789 220 L811 232 V257 L789 245 Z"/>
+      <path d="M814 234 L836 222 V247 L814 259 Z"/>
+    </g>
+    <text x="853" y="205" fill="#333" font-size="11" font-weight="bold">HashiCorp</text>
+    <text x="853" y="246" fill="#111" font-size="42" font-weight="bold">Terraform</text>
+
+    <!-- CloudFormation -->
+    <g transform="translate(849 330)">
+      <path d="M0 18 L48 0 L97 20 L97 84 L48 105 L0 84 Z" fill="#587b2b"/>
+      <path d="M17 28 L39 20 V80 L17 72 Z M80 29 L58 21 V81 L80 73 Z" fill="#fff" opacity=".88"/>
+      <path d="M48 0 V105" stroke="#456622" stroke-width="3"/>
+    </g>
+    <text x="898" y="467" fill="#555" font-size="19" font-weight="bold" text-anchor="middle">AWS CloudFormation</text>
+  </g>
+</svg>

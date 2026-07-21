@@ -1,8 +1,59 @@
 # Module 11 — Terraform Modules
 
+# **terraform modules used for provising different environments using the same infra**
+
+Instead of copying and pasting code, you write the infrastructure logic once inside a **reusable child module**. You then call that same module across your different environments, altering its behavior by passing in environment-specific **input variables** (such as distinct instance sizes, cluster counts, or database names).
+
+## Reusable module structure for multiple environments
+
+```text
+├── modules/
+│   └── web_app/               # The single blueprint/source of truth
+│       ├── main.tf
+│       ├── variables.tf
+│       └── outputs.tf
+│
+└── environments/              # Where the environments live separately
+    ├── dev/
+    │   ├── main.tf            # Calls ../../modules/web_app with dev variables
+    │   └── backend.tf         # Isolated dev.tfstate file
+    ├── staging/
+    │   ├── main.tf            # Calls ../../modules/web_app with staging variables
+    │   └── backend.tf         # Isolated staging.tfstate file
+    └── prod/
+        ├── main.tf            # Calls ../../modules/web_app with prod variables
+        └── backend.tf         # Isolated prod.tfstate file
+```
+
+### Reusing the module
+
+`environments/dev/main.tf` — lightweight development settings:
+
+```hcl
+module "my_app" {
+  source         = "../../modules/web_app"
+  environment    = "development"
+  instance_type  = "t3.micro"
+  instance_count = 1
+}
+```
+
+`environments/prod/main.tf` — the same module with production settings:
+
+```hcl
+module "my_app" {
+  source         = "../../modules/web_app"
+  environment    = "production"
+  instance_type  = "m5.large"
+  instance_count = 3
+}
+```
+
 ## What is a module?
 
 A module is a collection of Terraform files in one directory.
+
+**All `.tf` files in the working directory are part of the Terraform configuration, and Terraform automatically loads them together.**
 
 - The directory where you run Terraform is the **root module**.
 - A module called by another module is a **child module**.
@@ -175,4 +226,3 @@ module.environment["dev"]
 - [Module syntax](https://developer.hashicorp.com/terraform/language/modules/syntax)
 - [Developing modules](https://developer.hashicorp.com/terraform/language/modules/develop)
 - [Terraform Registry modules](https://registry.terraform.io/browse/modules)
-
