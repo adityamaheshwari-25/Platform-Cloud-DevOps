@@ -632,4 +632,367 @@ In one sentence:
 > **A GitHub pre-release is a tagged version of the software published for testing or validation before it is considered the final stable release.**
 
 
+# Draft Releases in GitHub
+
+## What is a Draft Release?
+
+A **draft release** is a GitHub Release that has been created and saved but **has not been published yet**.
+
+It is useful when a team wants to prepare a release before making it officially available.
+
+```text
+Specific Commit
+      ↓
+     Tag
+      ↓
+Draft Release
+      ↓
+Prepare notes / assets / metadata
+      ↓
+Publish Release
+```
+
+A draft release can be thought of as:
+
+> **A release that is still being prepared.**
+
+---
+
+## What can be prepared in a Draft Release?
+
+Before publishing, a team can prepare:
+
+* Release title
+* Version information
+* Release notes
+* Changelog
+* Binary files
+* Build artifacts
+* Installers
+* Documentation
+* Other downloadable assets
+* Whether the release should be marked as a pre-release
+
+This gives the team an opportunity to review everything before officially publishing the release.
+
+---
+
+## Typical Draft Release Workflow
+
+```text
+Development completed
+       ↓
+Create version tag
+       ↓
+Create Draft Release
+       ↓
+Add release notes
+       ↓
+Attach build artifacts
+       ↓
+Review release
+       ↓
+Publish
+```
+
+Once published, the release can become either:
+
+```text
+Draft Release
+     ↓
+Publish
+     ↓
+Pre-Release
+```
+
+or:
+
+```text
+Draft Release
+     ↓
+Publish
+     ↓
+Stable Release
+```
+
+depending on how the release is configured.
+
+---
+
+# Draft vs Pre-Release vs Stable Release
+
+| Release Type       | Meaning                                             |
+| ------------------ | --------------------------------------------------- |
+| **Draft Release**  | Created but not yet published                       |
+| **Pre-Release**    | Published but marked as not fully stable            |
+| **Stable Release** | Published and intended for normal or production use |
+
+The important difference is:
+
+```text
+Draft
+  ↓
+Publishing status
+
+Pre-Release
+  ↓
+Stability status
+```
+
+A draft tells us:
+
+> "Has this release been published?"
+
+A pre-release tells us:
+
+> "Is this published version considered stable?"
+
+---
+
+## Example
+
+Suppose a team is preparing version:
+
+```text
+v2.0.0
+```
+
+They may first create:
+
+```text
+Draft Release: v2.0.0
+```
+
+Inside the draft they prepare:
+
+```text
+Release Notes
+- Added new authentication system
+- Improved performance
+- Fixed login bug
+
+Assets
+- application.jar
+- application.zip
+- installer.exe
+```
+
+After reviewing everything, the team publishes it.
+
+```text
+Draft v2.0.0
+      ↓
+   Publish
+      ↓
+Release v2.0.0
+```
+
+---
+
+# Draft Releases in CI/CD
+
+Draft releases can be useful in CI/CD because they allow the release to be prepared before triggering actions associated with publishing.
+
+For example:
+
+```text
+CI builds application
+       ↓
+Create artifacts
+       ↓
+Create Draft Release
+       ↓
+Attach artifacts
+       ↓
+Human review / approval
+       ↓
+Publish Release
+       ↓
+CD deployment starts
+```
+
+This can provide a controlled release process.
+
+---
+
+## Example CI/CD Workflow
+
+```text
+Code merged to main
+       ↓
+Create tag v2.1.0
+       ↓
+CI Pipeline
+- Compile
+- Test
+- Security scan
+- Build artifacts
+       ↓
+Create Draft Release
+       ↓
+Attach:
+- app.jar
+- Docker metadata
+- installer
+       ↓
+Review / Approval
+       ↓
+Publish Release
+       ↓
+CD Pipeline
+       ↓
+Deploy to Production
+```
+
+The draft can therefore act as a preparation or approval stage before production deployment.
+
+---
+
+## Why are Draft Releases Useful?
+
+### 1. Review Before Publishing
+
+The team can verify:
+
+* Version number
+* Release notes
+* Artifacts
+* Changelog
+* Documentation
+
+before users see the release.
+
+---
+
+### 2. Prepare Build Artifacts
+
+CI can generate files such as:
+
+```text
+app.jar
+application.zip
+installer.exe
+```
+
+and attach them to the draft before the release is published.
+
+---
+
+### 3. Human Approval
+
+A workflow can be designed so that automation prepares the release, but a person reviews it before publication.
+
+```text
+Automation
+    ↓
+Create Draft
+    ↓
+Human Review
+    ↓
+Publish
+```
+
+---
+
+### 4. Avoid Publishing Incomplete Releases
+
+Without a draft stage, a release could potentially be published before:
+
+* Release notes are ready
+* Artifacts have been uploaded
+* Testing is completed
+* Approval has been given
+
+Draft releases allow everything to be prepared first.
+
+---
+
+# Draft Release and Tags
+
+A GitHub Release is generally associated with a Git tag.
+
+Conceptually:
+
+```text
+Commit abc123
+      ↑
+Tag v2.1.0
+      ↑
+Draft Release
+```
+
+The draft release is therefore being prepared around a particular version of the code.
+
+Once ready:
+
+```text
+Commit abc123
+      ↑
+Tag v2.1.0
+      ↑
+Published Release v2.1.0
+```
+
+---
+
+# Important Distinction
+
+**Draft** and **pre-release** are not the same thing.
+
+They describe different properties.
+
+```text
+Draft
+  ↓
+Is the release published?
+
+Pre-Release
+  ↓
+Is the published version considered stable?
+```
+
+For example:
+
+```text
+Draft Release
+      ↓
+Publish
+      ↓
+Pre-Release v2.0.0-beta
+```
+
+or:
+
+```text
+Draft Release
+      ↓
+Publish
+      ↓
+Stable Release v2.0.0
+```
+
+---
+
+# Quick Mental Model
+
+```text
+Draft Release
+      ↓
+Still being prepared
+
+Pre-Release
+      ↓
+Published for testing
+
+Stable Release
+      ↓
+Published for normal / production use
+```
+
+In one sentence:
+
+> **A GitHub Draft Release is an unpublished release that allows a team to prepare, review, and attach release information or artifacts before officially publishing the version.**
+
+
+
 Chat Link: https://chatgpt.com/share/e/6a7c4841-e5c0-8004-88de-66a5861b6a03
