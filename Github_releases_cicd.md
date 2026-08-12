@@ -356,4 +356,7 @@ Or, in one line:
 
 > **Commit = snapshot → Tag = version label → Release = official version → CI/CD = build and deployment automation**
 
+
+The tag must have the exact vMAJOR.MINOR.PATCH format like v1.2.3
+
 Chat Link: https://chatgpt.com/share/e/6a7c4841-e5c0-8004-88de-66a5861b6a03
