@@ -359,4 +359,277 @@ Or, in one line:
 
 The tag must have the exact vMAJOR.MINOR.PATCH format like v1.2.3
 
+
+
+# Pre-Releases in GitHub
+
+## What is a Pre-Release?
+
+A **pre-release** is a version of the software that is published before it is considered fully stable and ready for normal production use.
+
+It is commonly used for:
+
+* Internal testing
+* QA validation
+* Early-access testing
+* Integration testing
+* Collecting feedback before the final release
+
+A pre-release is still associated with a:
+
+```text
+GitHub Pre-Release
+        ↓
+      Git Tag
+        ↓
+  Specific Commit
+```
+
+So technically, it works very similarly to a normal GitHub Release. The main difference is its **stability/status**.
+
+---
+
+## Common Pre-Release Versions
+
+Typical version names include:
+
+```text
+v2.0.0-alpha
+v2.0.0-beta
+v2.0.0-rc.1
+v2.0.0
+```
+
+### Alpha
+
+An **alpha** version is an early development version.
+
+```text
+v2.0.0-alpha
+```
+
+It may:
+
+* Have incomplete features
+* Contain bugs
+* Change significantly
+* Be intended mainly for developers or internal testers
+
+---
+
+### Beta
+
+A **beta** version is more complete than an alpha version.
+
+```text
+v2.0.0-beta
+```
+
+Usually:
+
+* Most features are implemented
+* Testing is still happening
+* Bugs may still exist
+* Users or QA teams may test it before production release
+
+---
+
+### Release Candidate
+
+A **Release Candidate**, often written as `rc`, is a version that is believed to be ready for production unless additional problems are discovered.
+
+Example:
+
+```text
+v2.0.0-rc.1
+```
+
+If bugs are found, another release candidate might be created:
+
+```text
+v2.0.0-rc.1
+v2.0.0-rc.2
+v2.0.0-rc.3
+```
+
+Once the version is considered stable:
+
+```text
+v2.0.0
+```
+
+is published as the final stable release.
+
+---
+
+## Typical Release Lifecycle
+
+```text
+Development
+     ↓
+v2.0.0-alpha
+     ↓
+v2.0.0-beta
+     ↓
+v2.0.0-rc.1
+     ↓
+v2.0.0
+```
+
+A simplified interpretation is:
+
+```text
+Alpha
+  ↓
+Early testing
+
+Beta
+  ↓
+Broader testing
+
+Release Candidate
+  ↓
+Final validation
+
+Stable Release
+  ↓
+Production-ready version
+```
+
+---
+
+# Pre-Releases in CI/CD
+
+Pre-releases are useful in CI/CD because different versions can be deployed to different environments.
+
+For example:
+
+```text
+Developer creates
+v2.0.0-beta
+      ↓
+GitHub Pre-Release
+      ↓
+CI Pipeline
+- Build
+- Unit Tests
+- Integration Tests
+- Security Tests
+      ↓
+Deploy to QA / Staging
+```
+
+The pre-release can then be tested without affecting production.
+
+---
+
+## Example Environment Strategy
+
+```text
+v2.0.0-alpha
+      ↓
+Development Environment
+
+v2.0.0-beta
+      ↓
+QA Environment
+
+v2.0.0-rc.1
+      ↓
+Staging Environment
+
+v2.0.0
+      ↓
+Production Environment
+```
+
+This gives teams a controlled promotion path for software.
+
+---
+
+## Stable Release vs Pre-Release
+
+| Pre-Release                           | Stable Release                           |
+| ------------------------------------- | ---------------------------------------- |
+| Used for testing                      | Used for normal production use           |
+| May contain bugs                      | Expected to be stable                    |
+| Can be alpha, beta, or RC             | Usually a final version such as `v2.0.0` |
+| Often deployed to Dev, QA, or Staging | Commonly deployed to Production          |
+| May change before final release       | Represents an officially shipped version |
+
+---
+
+## Example CI/CD Flow
+
+```text
+Code Changes
+     ↓
+Pull Request
+     ↓
+Merge to main
+     ↓
+Tag: v2.0.0-beta
+     ↓
+GitHub Pre-Release
+     ↓
+Build + Test
+     ↓
+Deploy to Staging
+     ↓
+QA Testing
+     ↓
+Everything looks good
+     ↓
+Tag: v2.0.0
+     ↓
+GitHub Stable Release
+     ↓
+Deploy to Production
+```
+
+---
+
+## Important Point
+
+A **pre-release is still tied to a specific commit**, just like a normal release.
+
+```text
+Commit abc123
+      ↑
+Tag v2.0.0-beta
+      ↑
+GitHub Pre-Release
+```
+
+The difference is not how Git identifies the code.
+
+The difference is how the version is **classified and intended to be used**.
+
+---
+
+## Quick Mental Model
+
+```text
+Commit
+   ↓
+Exact code snapshot
+
+Tag
+   ↓
+Version identifier
+
+Pre-Release
+   ↓
+Version available for testing
+
+Stable Release
+   ↓
+Version approved for normal / production use
+```
+
+In one sentence:
+
+> **A GitHub pre-release is a tagged version of the software published for testing or validation before it is considered the final stable release.**
+
+
 Chat Link: https://chatgpt.com/share/e/6a7c4841-e5c0-8004-88de-66a5861b6a03
